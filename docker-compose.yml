@@ -1,0 +1,16 @@
+version: '3'
+services:
+  jd2:
+    image: jd2
+    container_name: jd2
+    network_mode: host
+    ports:
+      - '3130:3130/tcp'
+      - '3130:3130/udp'
+      - '5800:5800/tcp'
+    volumes:
+      - '/volume1/docker/jd2/cfg:/opt/JDownloader/cfg'
+      - '/volume1/Download:/opt/JDownloader/Downloads'
+    environment:
+      EMAIL: 'EMAIL'
+      PASSWORD: 'PASSWORD'
