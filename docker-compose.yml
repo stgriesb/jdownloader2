@@ -9,8 +9,8 @@ services:
       - '3130:3130/udp'
       - '5800:5800/tcp'
     volumes:
-      - '/volume1/docker/jd2/cfg:/opt/JDownloader/cfg'
-      - '/volume1/Download:/opt/JDownloader/Downloads'
+      - '${VOLUME}/cfg:/opt/JDownloader/cfg'
+      - '${DOWNLOADVOLUME}:/mnt/Downloads'
     environment:
-      EMAIL: 'EMAIL'
-      PASSWORD: 'PASSWORD'
+      EMAIL: ${EMAIL}
+      PASSWORD: ${PASSWORD}
